@@ -29,9 +29,15 @@ def get_repository_settings_private(settings):
 
 def upload_dataset():
     uploaded = files.upload()
-    dataset_name = list(uploaded.keys())[0]
-    path_dataset = os.path.join('content', dataset_name)
+    dataset_name_zip = list(uploaded.keys())[0]
+    path_dataset_zip = os.path.join('content', dataset_name_zip)
 
-    zip_ = zipfile.ZipFile(dataset_name, 'r')
-    zip_.extractall(os.path.splitext(path_dataset)[0])
+    dataset_name = os.path.splitext(path_dataset_zip)[0]
+
+    zip_ = zipfile.ZipFile(path_dataset_zip, 'r')
+    zip_.extractall(dataset_name)
     zip_.close()
+
+    dataset_path = os.path.join(['content', dataset_name, dataset_name])
+
+    return dataset_name, dataset_path
