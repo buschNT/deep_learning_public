@@ -15,3 +15,10 @@ def get_settings(path_file):
         except yaml.YAMLError as e:
             print(e)
     return False
+
+def get_git_private(settings):
+    GIT_USERNAME = settings['git']['private']['username']
+    GIT_TOKEN = settings['git']['private']['token']
+    GIT_REPOSITORY = settings['git']['private']['repository']
+    PATH_CODE = settings['git']['private']['path']
+    return GIT_USERNAME, GIT_TOKEN, GIT_REPOSITORY, PATH_CODE
