@@ -9,7 +9,7 @@ setup(
     author_email='chris.busch.22@gmail.com',
     packages=['colab'],
     install_requires=[
-        'yaml'
+        'pyyaml'
     ],
     zip_safe=False
 )
