@@ -1,1 +1,1 @@
-from .colab import test
+from .colab import *
