@@ -16,7 +16,7 @@ def get_settings(path_file):
             print(e)
     return False
 
-def get_git_private(settings):
+def get_repository_settings_private(settings):
     GIT_USERNAME = settings['git']['private']['username']
     GIT_TOKEN = settings['git']['private']['token']
     GIT_REPOSITORY = settings['git']['private']['repository']
